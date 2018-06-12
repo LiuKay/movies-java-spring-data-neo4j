@@ -89,12 +89,21 @@
                         $("#title").text(movie.title);
                         $("#poster").attr("src","http://neo4j-contrib.github.io/developer-resources/language-guides/assets/posters/"+encodeURIComponent(movie.title)+".jpg");
                         var $list = $("#crew").empty();
+
+
+
                         movie.roles.forEach(function (cast) {
-                            $.get(cast._links.person.href, function(personData) {
+
+                            var person = cast.person.name;
+                            var job = cast.job || "acted";
+                            $list.append($("<li>" + person + " " +job + (job == "acted"?" as " + cast.roles.join(", ") : "") + "</li>"));
+
+
+                           /* $.get(cast._links.person.href, function(personData) {
                                 var person = personData.name;
                                 var job = cast.job || "acted";
                                 $list.append($("<li>" + person + " " +job + (job == "acted"?" as " + cast.roles.join(", ") : "") + "</li>"));
-                            });
+                            });*/
                         });
                     }, "json");
             return false;
