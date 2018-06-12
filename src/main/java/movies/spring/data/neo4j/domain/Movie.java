@@ -22,6 +22,7 @@ public class Movie {
 	private int released;
 	private String tagline;
 
+	//不序列化roles里面的 movie属性
 	@JsonIgnoreProperties("movie")
 	@Relationship(type = "ACTED_IN", direction = Relationship.INCOMING)
 	private List<Role> roles;

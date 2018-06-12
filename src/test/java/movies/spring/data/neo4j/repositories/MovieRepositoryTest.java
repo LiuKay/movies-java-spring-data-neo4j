@@ -3,7 +3,10 @@ package movies.spring.data.neo4j.repositories;
 import static org.junit.Assert.*;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
+import movies.spring.data.neo4j.SampleMovieApplication;
 import movies.spring.data.neo4j.domain.Movie;
 import movies.spring.data.neo4j.domain.Person;
 import movies.spring.data.neo4j.domain.Role;
@@ -12,15 +15,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * @author pdtyreus
- */
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = {SampleMovieApplication.class})
 @Transactional
 public class MovieRepositoryTest {
 
@@ -86,5 +89,30 @@ public class MovieRepositoryTest {
 
 		assertEquals("The Matrix", movie.getTitle());
 		assertEquals("Keanu Reeves", movie.getRoles().iterator().next().getPerson().getName());
+	}
+
+
+	/**
+	 *  like 测试 fixme
+	 */
+    @Test
+    public void findByPersonName() {
+		String name = ".*Tom.*";
+		Collection<Movie> nameLike = movieRepository.findByPersonNameLike(name);
+
+		System.out.println("end");
+
+	}
+
+	@Test
+	public void getActorsThatActInMovieFromTitle() {
+		List<Person> matrix = movieRepository.getActorsThatActInMovieFromTitle("The Matrix", PageRequest.of(1,50));
+		System.out.println("end");
+	}
+
+	@Test
+	public void testLike2(){
+		Collection<Movie> byTitleLike2 = movieRepository.findByTitleLike2("(?i).*Matrix.*");
+		System.out.println("end");
 	}
 }
