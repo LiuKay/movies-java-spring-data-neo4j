@@ -19,4 +19,6 @@ public interface IPersonService {
     Collection<Movie> selectMoviesByPerson(String personName);
 
     List<Person> selectCoActorsByName(String personName,int page,int pageSize);
+
+    Collection selecOtherActorsWithRank(String personName);
 }

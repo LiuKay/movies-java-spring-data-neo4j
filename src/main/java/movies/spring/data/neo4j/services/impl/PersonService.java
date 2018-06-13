@@ -1,7 +1,9 @@
 package movies.spring.data.neo4j.services.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import movies.spring.data.neo4j.domain.Movie;
 import movies.spring.data.neo4j.domain.Person;
+import movies.spring.data.neo4j.domain.Ranker;
 import movies.spring.data.neo4j.repositories.MovieRepository;
 import movies.spring.data.neo4j.repositories.PersonRepository;
 import movies.spring.data.neo4j.services.IPersonService;
@@ -10,15 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
  * Created by kay on 2018/6/12
  */
+
+@Slf4j
 @Service
 public class PersonService implements IPersonService {
 
@@ -41,5 +42,18 @@ public class PersonService implements IPersonService {
 
         }
         return personList;
+    }
+
+    /**
+     *
+     * @param personName
+     * @return
+     */
+    public Collection selecOtherActorsWithRank(String personName){
+        List<Map<String,Long>> rankers = personRepository.selecOtherActorsWithRank(personName);
+
+        log.info("recommond rank :{}",rankers);
+
+        return rankers;
     }
 }

@@ -57,4 +57,10 @@ public class PersonController {
                                         @RequestParam(value = "pageSize",required = false,defaultValue = "15") int pageSize){
         return iPersonService.selectCoActorsByName(personName, page, pageSize);
     }
+
+
+    @GetMapping("/getUnCoActors")
+    public Collection getUnCoActors(@RequestParam("personName") String personName) {
+        return iPersonService.selecOtherActorsWithRank(personName);
+    }
 }
