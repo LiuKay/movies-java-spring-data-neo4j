@@ -23,29 +23,34 @@ public class MovieController {
 		this.movieService = movieService;
 	}
 
+    /**
+     * 根据电影名搜索--精确查找
+     * @param title
+     * @return
+     */
     @GetMapping("/movie")
     public Movie findByTitle(@RequestParam String title) {
         return movieService.findByTitle(title);
     }
 
-    @GetMapping("/movies")
+    /**
+     * 根据电影名搜索--模糊搜索
+     * @param title
+     * @return
+     */
+    @GetMapping("/moviesLike")
     public Collection<Movie> findByTitleLike(@RequestParam String title) {
         return movieService.findByTitleLike(title);
     }
 
+    /**
+     * 查询所有 person-ACTED_IN-movie 绘制成网状
+     * @param limit 条数
+     * @return
+     */
     @GetMapping("/graph")
 	public Map<String, Object> graph(@RequestParam(value = "limit",required = false) Integer limit) {
 		return movieService.graph(limit == null ? 100 : limit);
 	}
-
-   /* @GetMapping("/graph")
-    public Map<String, Object> graph(
-            @RequestParam(value = "title",required = false) String title,
-            @RequestParam(value = "limit",required = false) Integer limit) {
-	    if(title == null){
-	        title="The Matrix";    //fixme default value
-        }
-        return movieService.graph(limit == null ? 100 : limit);
-    }*/
 
 }

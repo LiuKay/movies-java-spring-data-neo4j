@@ -90,29 +90,4 @@ public class MovieRepositoryTest {
 		assertEquals("The Matrix", movie.getTitle());
 		assertEquals("Keanu Reeves", movie.getRoles().iterator().next().getPerson().getName());
 	}
-
-
-	/**
-	 *  like 测试 fixme
-	 */
-    @Test
-    public void findByPersonName() {
-		String name = ".*Tom.*";
-		Collection<Movie> nameLike = movieRepository.findByPersonNameLike(name);
-
-		System.out.println("end");
-
-	}
-
-	@Test
-	public void getActorsThatActInMovieFromTitle() {
-		List<Person> matrix = movieRepository.getActorsThatActInMovieFromTitle("The Matrix", PageRequest.of(1,50));
-		System.out.println("end");
-	}
-
-	@Test
-	public void testLike2(){
-		Collection<Movie> byTitleLike2 = movieRepository.findByTitleLike2("(?i).*Matrix.*");
-		System.out.println("end");
-	}
 }

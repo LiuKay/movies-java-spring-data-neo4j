@@ -45,9 +45,14 @@ public class MovieService implements IMovieService {
 	}
 
 
-	public List<Person> findActorsByTitle(String title,int page,int pageSize){
+	public List<Person> findActorsByTitleLike(String title,int page,int pageSize){
         title = new StringBuilder().append("(?i).*").append(title).append(".*").toString();
-        List<Person> roles = movieRepository.getActorsThatActInMovieFromTitle(title, PageRequest.of(page, pageSize));
-        return roles;
+        List<Person> personList = movieRepository.getPersonsActInMovieFromTitleLike(title, PageRequest.of(page, pageSize));
+        return personList;
+    }
+
+    public List<Person> findActorsByTitle(String title,int page,int pageSize){
+        List<Person> personList = movieRepository.getPersonsActInMovieFromTitle(title, PageRequest.of(page, pageSize));
+        return personList;
     }
 }

@@ -17,6 +17,11 @@ public interface IMovieService {
     Collection<Movie> findByTitleLike(String title);
 
 
+    /**
+     *
+     * @param limit
+     * @return
+     */
     Map<String, Object> graph(int limit);
 
     /**
@@ -26,5 +31,14 @@ public interface IMovieService {
      * @param pageSize
      * @return
      */
-    List<Person> findActorsByTitle(String title, int page, int pageSize);
+    List<Person> findActorsByTitleLike(String title, int page, int pageSize);
+
+    /**
+     * 精确查询
+     * @param title
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    List<Person> findActorsByTitle(String title,int page,int pageSize);
 }
