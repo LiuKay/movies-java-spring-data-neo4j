@@ -3,21 +3,18 @@ package movies.spring.data.neo4j.repositories;
 import static org.junit.Assert.*;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 
 import movies.spring.data.neo4j.SampleMovieApplication;
-import movies.spring.data.neo4j.domain.Movie;
-import movies.spring.data.neo4j.domain.Person;
-import movies.spring.data.neo4j.domain.Role;
+import movies.spring.data.neo4j.domain.neo4j.Movie;
+import movies.spring.data.neo4j.domain.neo4j.Person;
+import movies.spring.data.neo4j.domain.neo4j.Role;
+import movies.spring.data.neo4j.repositories.neo4j.MovieRepository;
+import movies.spring.data.neo4j.repositories.neo4j.PersonRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 

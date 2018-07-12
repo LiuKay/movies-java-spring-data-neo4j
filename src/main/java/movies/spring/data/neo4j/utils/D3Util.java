@@ -1,7 +1,7 @@
 package movies.spring.data.neo4j.utils;
 
-import movies.spring.data.neo4j.domain.Movie;
-import movies.spring.data.neo4j.domain.Role;
+import movies.spring.data.neo4j.domain.neo4j.Movie;
+import movies.spring.data.neo4j.domain.neo4j.Role;
 
 import java.util.*;
 

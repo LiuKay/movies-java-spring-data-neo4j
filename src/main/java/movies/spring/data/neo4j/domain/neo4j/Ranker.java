@@ -1,4 +1,4 @@
-package movies.spring.data.neo4j.domain;
+package movies.spring.data.neo4j.domain.neo4j;
 
 
 /**

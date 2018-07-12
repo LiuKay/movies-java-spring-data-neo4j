@@ -1,11 +1,10 @@
 package movies.spring.data.neo4j.services.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import movies.spring.data.neo4j.domain.Movie;
-import movies.spring.data.neo4j.domain.Person;
-import movies.spring.data.neo4j.domain.Ranker;
-import movies.spring.data.neo4j.repositories.MovieRepository;
-import movies.spring.data.neo4j.repositories.PersonRepository;
+import movies.spring.data.neo4j.domain.neo4j.Movie;
+import movies.spring.data.neo4j.domain.neo4j.Person;
+import movies.spring.data.neo4j.repositories.neo4j.MovieRepository;
+import movies.spring.data.neo4j.repositories.neo4j.PersonRepository;
 import movies.spring.data.neo4j.services.IPersonService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Created by kay on 2018/6/12

@@ -1,10 +1,10 @@
-package movies.spring.data.neo4j.repositories;
+package movies.spring.data.neo4j.repositories.neo4j;
 
 import java.util.Collection;
 import java.util.List;
 
-import movies.spring.data.neo4j.domain.Movie;
-import movies.spring.data.neo4j.domain.Person;
+import movies.spring.data.neo4j.domain.neo4j.Movie;
+import movies.spring.data.neo4j.domain.neo4j.Person;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;

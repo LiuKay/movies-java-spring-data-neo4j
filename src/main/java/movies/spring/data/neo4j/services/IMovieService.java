@@ -1,7 +1,7 @@
 package movies.spring.data.neo4j.services;
 
-import movies.spring.data.neo4j.domain.Movie;
-import movies.spring.data.neo4j.domain.Person;
+import movies.spring.data.neo4j.domain.neo4j.Movie;
+import movies.spring.data.neo4j.domain.neo4j.Person;
 
 import java.util.Collection;
 import java.util.List;

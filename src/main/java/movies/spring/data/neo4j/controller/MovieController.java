@@ -3,9 +3,8 @@ package movies.spring.data.neo4j.controller;
 import java.util.Collection;
 import java.util.Map;
 
-import movies.spring.data.neo4j.domain.Movie;
+import movies.spring.data.neo4j.domain.neo4j.Movie;
 import movies.spring.data.neo4j.services.IMovieService;
-import movies.spring.data.neo4j.services.impl.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

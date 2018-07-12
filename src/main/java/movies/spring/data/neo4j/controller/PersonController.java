@@ -1,7 +1,7 @@
 package movies.spring.data.neo4j.controller;
 
-import movies.spring.data.neo4j.domain.Movie;
-import movies.spring.data.neo4j.domain.Person;
+import movies.spring.data.neo4j.domain.neo4j.Movie;
+import movies.spring.data.neo4j.domain.neo4j.Person;
 import movies.spring.data.neo4j.services.IMovieService;
 import movies.spring.data.neo4j.services.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;

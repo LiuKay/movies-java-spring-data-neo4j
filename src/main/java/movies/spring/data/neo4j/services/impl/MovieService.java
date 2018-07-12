@@ -2,18 +2,15 @@ package movies.spring.data.neo4j.services.impl;
 
 import java.util.*;
 
-import movies.spring.data.neo4j.domain.Movie;
-import movies.spring.data.neo4j.domain.Person;
-import movies.spring.data.neo4j.domain.Role;
-import movies.spring.data.neo4j.repositories.MovieRepository;
+import movies.spring.data.neo4j.domain.neo4j.Movie;
+import movies.spring.data.neo4j.domain.neo4j.Person;
+import movies.spring.data.neo4j.repositories.neo4j.MovieRepository;
 import movies.spring.data.neo4j.services.IMovieService;
 import movies.spring.data.neo4j.utils.D3Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

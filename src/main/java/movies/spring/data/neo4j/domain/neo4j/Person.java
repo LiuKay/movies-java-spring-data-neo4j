@@ -1,10 +1,9 @@
-package movies.spring.data.neo4j.domain;
+package movies.spring.data.neo4j.domain.neo4j;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
